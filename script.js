@@ -1,3 +1,5 @@
+import SignaturePad from "https://cdn.skypack.dev/react-signature-pad-wrapper@2.0.1";
+
 const Btn = (props) =>
 React.createElement("button", { class: props.class, onClick: props.handleClick, value: props.text, id: props.value ? props.value : props.text }, props.text);
 const Logo = () =>
@@ -132,7 +134,7 @@ class Blackboard extends React.Component {
   render() {
     return (
       React.createElement("section", { id: "blackboard" },
-      React.createElement(Canvas, null),
+      React.createElement(SignaturePad, { options: { minWidth: 1, maxWidth: 2, penColor: '#fff' } }),
       React.createElement("center", null,
       React.createElement("div", { class: "reset-wrapper" },
       React.createElement("button", { id: "reset-canvas", onClick: this.props.handleReset }, "\uD83D\uDDD1")))));
