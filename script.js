@@ -1,3 +1,5 @@
+import SignaturePad from "https://cdn.skypack.dev/react-signature-pad-wrapper@2.0.1";
+
 const Btn = (props) =>
 React.createElement("button", { class: props.class, onClick: props.handleClick, value: props.text, id: props.value ? props.value : props.text }, props.text);
 const Logo = () =>
@@ -92,7 +94,7 @@ React.createElement(Btn, { handleClick: props.handleClick, class: "blue-button",
 
 
 const Canvas = () =>
-React.createElement("center", null, React.createElement("canvas", { id: "canvas", width: 215, height: 350 }));
+React.createElement("center", null, React.createElement("canvas", { id: "canvas", height: 350 }));
 const Terminal = (props) =>
 React.createElement("div", { id: "terminal" }, React.createElement("ul", null,
 props.save.map((v, i) => {
