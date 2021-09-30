@@ -13,7 +13,6 @@ React.createElement("section", { id: "readout" },
 React.createElement("table", { onClick: props.handleClick },
 React.createElement("input", { value: props.expr, placeholder: props.temp, onChange: props.handleChange, onClick: props.handleClick })));
 
-
 const Keypad = (props) =>
 React.createElement("section", { id: "keypad" },
 React.createElement("table", null,
@@ -66,9 +65,6 @@ React.createElement(Btn, { handleClick: props.handleClick, text: "arccos", value
 React.createElement(Btn, { handleClick: props.handleClick, text: "arctan", value: "atan", class: "white-button" }),
 React.createElement(Btn, { handleClick: props.handleClick, text: "deg", class: "red-button" })))));
 
-
-
-
 const Panel = (props) =>
 React.createElement("section", { id: "panel" },
 React.createElement("button", { id: "switch" },
@@ -79,9 +75,6 @@ React.createElement("td", { class: "toggle", onClick: props.toggleMode }),
 React.createElement("td", { class: "toggle", onClick: props.toggleMode }),
 React.createElement("td", { class: "toggle", onClick: props.toggleMode })))));
 
-
-
-
 const Plate = (props) =>
 React.createElement("section", { id: "plate" },
 React.createElement("table", null,
@@ -90,11 +83,7 @@ React.createElement("td", null, React.createElement(Logo, null)),
 React.createElement("td", null,
 React.createElement(Btn, { handleClick: props.handleClick, class: "blue-button", text: "AC" })))));
 
-
-
-
-const Canvas = () =>
-React.createElement("center", null, React.createElement("canvas", { id: "canvas", width: 215, height: 350 }));
+const Canvas = () => React.createElement(SignaturePad, { options: { minWidth: 1, maxWidth: 2, penColor: '#fff' }, id: 'canvas'});
 const Terminal = (props) =>
 React.createElement("div", { id: "terminal" }, React.createElement("ul", null,
 props.save.map((v, i) => {
@@ -120,12 +109,7 @@ class Monitor extends React.Component {
       React.createElement("center", null,
       React.createElement("div", { class: "reset-wrapper" },
       React.createElement("button", { id: "reset-terminal", onClick: this.props.handleReset }, "\uD83D\uDDD1")))));
-
-
-
-
   }}
-
 
 class Blackboard extends React.Component {
   constructor(props) {
@@ -134,14 +118,10 @@ class Blackboard extends React.Component {
   render() {
     return (
       React.createElement("section", { id: "blackboard" },
-      React.createElement(SignaturePad, { options: { minWidth: 1, maxWidth: 2, penColor: '#fff' } }),
+      React.createElement(Canvas, null),
       React.createElement("center", null,
       React.createElement("div", { class: "reset-wrapper" },
       React.createElement("button", { id: "reset-canvas", onClick: this.props.handleReset }, "\uD83D\uDDD1")))));
-
-
-
-
   }}
 
 class Calculator extends React.Component {
@@ -155,8 +135,6 @@ class Calculator extends React.Component {
       React.createElement(Plate, { handleClick: this.props.handleClick }),
       React.createElement(Panel, { toggleMode: this.props.toggleMode }),
       React.createElement(Keypad, { handleClick: this.props.handleClick })));
-
-
   }}
 
 class Main extends React.Component {
@@ -178,11 +156,8 @@ class Main extends React.Component {
         handleClick: this.props.handleClick,
         toggleMode: this.props.toggleMode })),
 
-
       React.createElement("div", { class: "column col-md-4" },
       React.createElement(Monitor, { handleReset: this.props.handleReset, expr: this.props.expr, save: this.props.save })))));
-
-
   }}
 
 class Footer extends React.Component {
@@ -192,7 +167,6 @@ class Footer extends React.Component {
   render() {
     return React.createElement("footer", null, React.createElement("div", { class: "row" }, React.createElement("div", { class: "column" }, React.createElement(Attribution, null))));
   }}
-
 
 class Simplify extends React.Component {
   constructor(props) {
@@ -208,7 +182,6 @@ class Simplify extends React.Component {
       google: {
         families: ['Quantico:400,700i', 'Poiret One'] } });
 
-
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -220,14 +193,9 @@ class Simplify extends React.Component {
   }
   initCanvas() {
     let canvas = document.querySelector('canvas');
-    let signaturePad = new SignaturePad(
-    canvas, {
-      backgroundColor: '#333',
-      penColor: '#fff' });
-
+//    canvas.clear():
     this.setState({
-      pad: signaturePad });
-
+      pad: canvas });
   }
   handleClick(event) {
     let id = event.target.id;
@@ -238,7 +206,6 @@ class Simplify extends React.Component {
       case '=':this.handleEval();break;
       case 'del':this.handleInput(this.state.expr.slice(0, -1));break;
       default:this.handleInput(this.state.expr + id);}
-
   }
   handleChange(event) {
     let value = event.target.value;
@@ -249,7 +216,6 @@ class Simplify extends React.Component {
   handleInput(value) {
     this.setState({
       expr: value });
-
   }
   handleEval() {
     let result = math.evaluate(this.state.expr);
@@ -257,7 +223,6 @@ class Simplify extends React.Component {
     this.setState({
       expr: result,
       save: saves });
-
   }
   handleReset(event) {
     let id = event.target.id;
@@ -273,15 +238,14 @@ class Simplify extends React.Component {
         this.setState({
           save: [] });
 
-        break;}
-
+        break;
+    }
   }
   toggleMode() {
     console.log(this.state.mode);
     let inverse = !this.state.mode;
     this.setState({
       mode: inverse });
-
   }
   render() {
     return (
@@ -289,9 +253,6 @@ class Simplify extends React.Component {
       React.createElement(Header, { mode: this.state.mode }),
       React.createElement(Main, { expr: this.state.expr, save: this.state.save, temp: this.state.temp, mode: this.state.mode, handleChange: this.handleChange, handleClick: this.handleClick, handleReset: this.handleReset, toggleMode: this.toggleMode }),
       React.createElement(Footer, { mode: this.state.mode })));
-
-
-  }}
-;
+  }};
 
 ReactDOM.render(React.createElement(Simplify, null), document.getElementById('react'));
