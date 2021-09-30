@@ -150,7 +150,7 @@ body main div.row section#monitor div#terminal ul {
   padding: 0;
 }
 body main div.row section#monitor div#terminal ul li:before {
-  content: '>';
+  content: ">";
   margin: 0 1em;
 }
 body main div.row section#monitor div.reset-wrapper {

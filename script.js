@@ -183,8 +183,6 @@ class Main extends React.Component {
       React.createElement(Monitor, { handleReset: this.props.handleReset, expr: this.props.expr, save: this.props.save })))));
 
 
-
-
   }}
 
 class Footer extends React.Component {
