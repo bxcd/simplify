@@ -2,6 +2,7 @@ const Btn = (props) => /*#__PURE__*/
 React.createElement("button", { class: props.class, onClick: props.handleClick, value: props.text, id: props.value ? props.value : props.text }, props.text);
 const Logo = () => /*#__PURE__*/
 React.createElement("h3", { id: "logo" }, "TR-101");
+const Mode = () => /*#__PURE__*/React.createElement("h5", { id: "mode" }, "Tap the solar panel to switch light mode");
 const Title = () => /*#__PURE__*/
 React.createElement("h1", { id: "title" }, /*#__PURE__*/React.createElement("a", { href: "https://rjbx.github.io/simplify" }, "simplify"));
 const Attribution = () => /*#__PURE__*/
@@ -144,7 +145,7 @@ class Main extends React.Component {
   }
   render() {
     return /*#__PURE__*/(
-      React.createElement("main", { style: { backgroundColor: this.props.mode ? '#333' : '#ffddaa' } }, /*#__PURE__*/
+      React.createElement("main", { style: { backgroundColor: this.props.mode ? '#883322' : '#333' } }, /*#__PURE__*/
       React.createElement("div", { class: "row" }, /*#__PURE__*/
       React.createElement("div", { class: "column col-md-5" }, /*#__PURE__*/
       React.createElement(Calculator, {
@@ -168,7 +169,7 @@ class Footer extends React.Component {
     super(props);
   }
   render() {
-    return /*#__PURE__*/React.createElement("footer", null, /*#__PURE__*/React.createElement("div", { class: "row" }, /*#__PURE__*/React.createElement("div", { class: "column" }, /*#__PURE__*/React.createElement(Attribution, null))));
+    return /*#__PURE__*/React.createElement("footer", null, /*#__PURE__*/React.createElement("div", { class: "row" }, /*#__PURE__*/React.createElement("div", { class: "column" }, /*#__PURE__*/React.createElement(Mode, null), /*#__PURE__*/React.createElement(Attribution, null))));
   }}
 
 

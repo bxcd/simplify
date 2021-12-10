@@ -152,10 +152,10 @@ body {
     background-color: #333;
     border-top: 2px solid #777;
     div.row {
-      @include flexbox(10vh);
+      @include flexbox(5vh);
       div.column {
         margin: auto;
-        h5#attribution {
+        h5#attribution, h5#mode {
           font-family: sans-serif; 
           color: grey;
           font-size: calc(8px + 0.5vmin);

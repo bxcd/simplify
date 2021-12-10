@@ -2,6 +2,7 @@ const Btn = (props) =>
          <button class={props.class} onClick={props.handleClick} value={props.text} id={props.value ? props.value : props.text}>{props.text}</button>;
 const Logo = () => 
         <h3 id='logo'>TR-101</h3>;
+const Mode = () => <h5 id='mode'>Tap the solar panel to switch light mode</h5>;
 const Title = () => 
         <h1 id='title'><a href='https://rjbx.github.io/simplify'>simplify</a></h1>;
 const Attribution = () => 
@@ -144,7 +145,7 @@ class Main extends React.Component {
   } 
   render() {
     return (
-      <main style={{backgroundColor: this.props.mode ? '#333' : '#ffddaa' }}>
+      <main style={{backgroundColor: this.props.mode ? '#883322' : '#333' }}>
         <div class='row'>
           <div class="column col-md-5">
             <Calculator 
@@ -168,7 +169,7 @@ class Footer extends React.Component {
     super(props);
   } 
   render() {
-    return (<footer><div class='row'><div class='column'><Attribution /></div></div></footer>);
+    return (<footer><div class='row'><div class='column'><Mode /><Attribution /></div></div></footer>);
   }
 }
 

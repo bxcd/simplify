@@ -156,12 +156,12 @@ body footer div.row {
   display: flex;
   align-items: center;
   min-width: 100%;
-  min-height: 10vh;
+  min-height: 5vh;
 }
 body footer div.row div.column {
   margin: auto;
 }
-body footer div.row div.column h5#attribution {
+body footer div.row div.column h5#attribution, body footer div.row div.column h5#mode {
   font-family: sans-serif;
   color: grey;
   font-size: calc(8px + 0.5vmin);
