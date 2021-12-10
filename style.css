@@ -111,26 +111,6 @@ body main div.row section#calculator section#keypad table button.red-button {
   font-weight: bold;
   font-size: 11px;
 }
-body main div.row section#blackboard {
-  background-color: #333;
-  border: 10px solid #BB9955;
-  border-bottom: 25px solid tan;
-}
-body main div.row section#blackboard canvas {
-  height: 350px;
-}
-body main div.row section#blackboard div.reset-wrapper {
-  height: 10px;
-}
-body main div.row section#blackboard div.reset-wrapper button {
-  width: 60px;
-  height: 24px;
-  background-color: #fff;
-  color: #222;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 1em;
-}
 body main div.row section#monitor {
   border: 10px solid #DDD;
   border-bottom: 25px solid silver;
@@ -150,7 +130,7 @@ body main div.row section#monitor div#terminal ul {
   padding: 0;
 }
 body main div.row section#monitor div#terminal ul li:before {
-  content: '>';
+  content: ">";
   margin: 0 1em;
 }
 body main div.row section#monitor div.reset-wrapper {

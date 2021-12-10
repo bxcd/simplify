@@ -114,21 +114,6 @@ body {
           }
         }
       }
-      section#blackboard {
-        background-color: #333;
-        border: 10px solid #BB9955;
-        border-bottom: 25px solid tan;
-        canvas {
-          height: 350px;
-        }
-        div.reset-wrapper {
-          height: 10px;
-          button {
-            @include button($tc: #222, $fs: 14px);
-            line-height: 1em;
-          }
-        }
-      }
       section#monitor {
         border: 10px solid #DDD;
         border-bottom: 25px solid silver; 
