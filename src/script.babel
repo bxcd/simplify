@@ -144,9 +144,9 @@ class Main extends React.Component {
   } 
   render() {
     return (
-      <main style={{backgroundColor: this.props.mode ? '#333' : '#fff' }}>
+      <main style={{backgroundColor: this.props.mode ? '#333' : '#ffddaa' }}>
         <div class='row'>
-          <div class="column col-md-3">
+          <div class="column col-md-5">
             <Calculator 
                expr={this.props.expr} 
                temp={this.props.temp} 
@@ -155,7 +155,7 @@ class Main extends React.Component {
                toggleMode={this.props.toggleMode}
               />
           </div>
-          <div class="column col-md-9">
+          <div class="column col-md-5">
             <Monitor handleReset={this.props.handleReset} expr={this.props.expr} save={this.props.save}/>
           </div>
         </div>

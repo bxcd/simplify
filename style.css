@@ -34,6 +34,8 @@ body main {
   padding: 20px;
 }
 body main div.row {
+  align-items: center;
+  justify-content: center;
   display: flex;
   align-items: center;
   min-width: 100%;

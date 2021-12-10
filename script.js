@@ -144,9 +144,9 @@ class Main extends React.Component {
   }
   render() {
     return /*#__PURE__*/(
-      React.createElement("main", { style: { backgroundColor: this.props.mode ? '#333' : '#fff' } }, /*#__PURE__*/
+      React.createElement("main", { style: { backgroundColor: this.props.mode ? '#333' : '#ffddaa' } }, /*#__PURE__*/
       React.createElement("div", { class: "row" }, /*#__PURE__*/
-      React.createElement("div", { class: "column col-md-3" }, /*#__PURE__*/
+      React.createElement("div", { class: "column col-md-5" }, /*#__PURE__*/
       React.createElement(Calculator, {
         expr: this.props.expr,
         temp: this.props.temp,
@@ -155,7 +155,7 @@ class Main extends React.Component {
         toggleMode: this.props.toggleMode })), /*#__PURE__*/
 
 
-      React.createElement("div", { class: "column col-md-9" }, /*#__PURE__*/
+      React.createElement("div", { class: "column col-md-5" }, /*#__PURE__*/
       React.createElement(Monitor, { handleReset: this.props.handleReset, expr: this.props.expr, save: this.props.save })))));
 
 

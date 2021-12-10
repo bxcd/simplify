@@ -46,6 +46,8 @@ body {
   main {
     padding: 20px;
     div.row {
+      align-items: center;
+      justify-content: center;
       @include flexbox(70vh);
       section#readout {
         table {
