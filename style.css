@@ -156,7 +156,7 @@ body footer div.row {
   display: flex;
   align-items: center;
   min-width: 100%;
-  min-height: 5vh;
+  min-height: 1vh;
 }
 body footer div.row div.column {
   margin: auto;

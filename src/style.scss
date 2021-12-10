@@ -152,7 +152,7 @@ body {
     background-color: #333;
     border-top: 2px solid #777;
     div.row {
-      @include flexbox(5vh);
+      @include flexbox(1vh);
       div.column {
         margin: auto;
         h5#attribution, h5#mode {
