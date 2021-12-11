@@ -5,9 +5,9 @@ React.createElement("h1", { id: "title" }, /*#__PURE__*/React.createElement("a",
 const Logo = () => /*#__PURE__*/
 React.createElement("h3", { id: "logo" }, "TR-101");
 const Mode = () => /*#__PURE__*/
-React.createElement("h5", { id: "mode" }, "Tap the solar panel to switch light mode");
+React.createElement("h5", { id: "mode" }, "Tap solar panel to switch light mode");
 const Attribution = () => /*#__PURE__*/
-React.createElement("h5", { id: "attribution" }, "Made by ", /*#__PURE__*/React.createElement("a", { target: "_blank", href: "https://github.com/rjbx/simplify" }, "rjbx"), " with ", /*#__PURE__*/React.createElement("a", { target: "_blank", href: "https://reactjs.org" }, "ReactJS"), " and ", /*#__PURE__*/React.createElement("a", { target: "_blank", href: "https://mathjs.org" }, "MathJS"));
+React.createElement("h5", { id: "attribution" }, "Made by ", /*#__PURE__*/React.createElement("a", { target: "_blank", href: "https://github.com/rjbx/simplify" }, "rjbx"), " with ", /*#__PURE__*/React.createElement("a", { target: "_blank", href: "https://reactjs.org" }, "ReactJS"), " + ", /*#__PURE__*/React.createElement("a", { target: "_blank", href: "https://mathjs.org" }, "MathJS"));
 const Readout = (props) => /*#__PURE__*/
 React.createElement("section", { id: "readout" }, /*#__PURE__*/
 React.createElement("table", { onClick: props.handleClick }, /*#__PURE__*/

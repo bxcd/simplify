@@ -117,8 +117,7 @@ body {
         }
       }
       section#monitor {
-        border: 10px solid #DDD;
-        border-bottom: 25px solid silver; 
+        border: 10px solid silver;
         border-radius: 10px; 
         background-color: #333;
         div#terminal {
@@ -148,7 +147,7 @@ body {
     }
   }
   footer {
-    padding: 10px;
+    padding-top: 5px;
     background-color: #333;
     border-top: 2px solid #777;
     div.row {
@@ -156,7 +155,8 @@ body {
       div.column {
         margin: auto;
         h5#attribution, h5#mode {
-          font-family: sans-serif; 
+          font-family: sans-serif;
+          font-weight: bold;
           color: grey;
           font-size: calc(8px + 0.5vmin);
           margin: 0;
