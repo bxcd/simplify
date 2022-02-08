@@ -1,4 +1,3 @@
 # simplify
-Trig calculator made with MathJS and React
 
-Dev branches: /sigpad and /sigpadfix
+Trig calculator made with MathJS, Bootstrap, React and Redux
