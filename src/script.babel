@@ -1,7 +1,7 @@
 const Btn = (props) => 
          <button class={props.class} onClick={props.handleClick} value={props.text} id={props.value ? props.value : props.text}>{props.text}</button>;
 const Title = () => 
-        <h1 id='title'><a href='https://bxcd.github.io/simplify'>simplify</a></h1>;
+        <h1 id='title'><a href='https://bxcd.github.io/simplify'>SIMPLIFY</a></h1>;
 const Logo = () => 
         <h3 id='logo'>TR-101</h3>;
 const Mode = () => 

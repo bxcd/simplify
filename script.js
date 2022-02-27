@@ -1,7 +1,7 @@
 const Btn = (props) => /*#__PURE__*/
 React.createElement("button", { class: props.class, onClick: props.handleClick, value: props.text, id: props.value ? props.value : props.text }, props.text);
 const Title = () => /*#__PURE__*/
-React.createElement("h1", { id: "title" }, /*#__PURE__*/React.createElement("a", { href: "https://bxcd.github.io/simplify" }, "simplify"));
+React.createElement("h1", { id: "title" }, /*#__PURE__*/React.createElement("a", { href: "https://bxcd.github.io/simplify" }, "SIMPLIFY"));
 const Logo = () => /*#__PURE__*/
 React.createElement("h3", { id: "logo" }, "TR-101");
 const Mode = () => /*#__PURE__*/
