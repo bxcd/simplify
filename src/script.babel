@@ -1,17 +1,17 @@
 const Btn = (props) => 
          <button class={props.class} onClick={props.handleClick} value={props.text} id={props.value ? props.value : props.text}>{props.text}</button>;
 const Title = () => 
-        <h1 id='title'><a href='https://rjbx.github.io/simplify'>simplify</a></h1>;
+        <h1 id='title'><a href='https://bxcd.github.io/simplify'>simplify</a></h1>;
 const Logo = () => 
         <h3 id='logo'>TR-101</h3>;
 const Mode = () => 
         <h5 id='mode'>Tap solar panel to switch light mode</h5>;
 const Attribution = () => 
-        <h5 id='attribution'>Made by <a target='_blank' href='https://github.com/rjbx/simplify'>rjbx</a> with <a target='_blank' href='https://reactjs.org'>ReactJS</a> + <a target='_blank' href='https://mathjs.org'>MathJS</a></h5>;
+        <h5 id='attribution'>Made by <a target='_blank' href='https://github.com/bxcd/simplify'>bxcd</a> with <a target='_blank' href='https://reactjs.org'>ReactJS</a> + <a target='_blank' href='https://mathjs.org'>MathJS</a></h5>;
 const Readout = (props) => 
       <section id='readout'>
         <table onClick={props.handleClick}>
-           <input value={props.expr} placeholder={props.temp} onChange={props.handleChange} onClick={props.handleClick}/>
+           <input id='input' value={props.expr} placeholder={props.temp} onChange={props.handleChange} onClick={props.handleClick}/>
         </table>
       </section>;
 const Keypad = (props) =>
@@ -49,21 +49,21 @@ const Keypad = (props) =>
               <Btn handleClick={props.handleClick} text='/' class='red-button'/>
             </tr>
             <tr>
-              <Btn handleClick={props.handleClick} text='log' value='log10' class='white-button'/>
-              <Btn handleClick={props.handleClick} text='ln' value='log' class='white-button'/>
+              <Btn handleClick={props.handleClick} text='log' value='log10(' class='white-button'/>
+              <Btn handleClick={props.handleClick} text='ln' value='log(' class='white-button'/>
               <Btn handleClick={props.handleClick} text='e' class='white-button'/>
-              <Btn handleClick={props.handleClick} text='sqrt' class='red-button'/>
+              <Btn handleClick={props.handleClick} text='sqrt' value= 'sqrt(' class='red-button'/>
             </tr>
             <tr>
-              <Btn handleClick={props.handleClick} text='sin' class='white-button'/>
-              <Btn handleClick={props.handleClick} text='cos' class='white-button'/>
-              <Btn handleClick={props.handleClick} text='tan' class='white-button'/>
+              <Btn handleClick={props.handleClick} text='sin' value='sin(' class='white-button'/>
+              <Btn handleClick={props.handleClick} text='cos' value='cos(' class='white-button'/>
+              <Btn handleClick={props.handleClick} text='tan' value='tan(' class='white-button'/>
               <Btn handleClick={props.handleClick} text='pi' class='red-button'/>
             </tr>
             <tr>
-              <Btn handleClick={props.handleClick} text='arcsin' value='asin' class='white-button'/>
-              <Btn handleClick={props.handleClick} text='arccos' value='acos' class='white-button'/>
-              <Btn handleClick={props.handleClick} text='arctan' value='atan' class='white-button'/>
+              <Btn handleClick={props.handleClick} text='arcsin' value='asin(' class='white-button'/>
+              <Btn handleClick={props.handleClick} text='arccos' value='acos(' class='white-button'/>
+              <Btn handleClick={props.handleClick} text='arctan' value='atan(' class='white-button'/>
               <Btn handleClick={props.handleClick} text='deg' class='red-button'/>
             </tr>
           </tbody>
@@ -202,7 +202,9 @@ class Simplify extends React.Component {
       case '#': this.toggleMode(); break;
       case '=': this.handleEval(); break;
       case 'del': this.handleInput(this.state.expr.slice(0,-1)); break;
-      default: this.handleInput(this.state.expr + id);
+      default: 
+        document.getElementById("input").focus();
+        this.handleInput(this.state.expr + id);
     }
   }
   handleChange(event) {

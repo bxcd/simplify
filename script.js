@@ -11,7 +11,7 @@ React.createElement("h5", { id: "attribution" }, "Made by ", /*#__PURE__*/React.
 const Readout = (props) => /*#__PURE__*/
 React.createElement("section", { id: "readout" }, /*#__PURE__*/
 React.createElement("table", { onClick: props.handleClick }, /*#__PURE__*/
-React.createElement("input", { value: props.expr, placeholder: props.temp, onChange: props.handleChange, onClick: props.handleClick })));
+React.createElement("input", { id: "input", value: props.expr, placeholder: props.temp, onChange: props.handleChange, onClick: props.handleClick })));
 
 
 const Keypad = (props) => /*#__PURE__*/
@@ -49,21 +49,21 @@ React.createElement(Btn, { handleClick: props.handleClick, text: "^", class: "wh
 React.createElement(Btn, { handleClick: props.handleClick, text: "/", class: "red-button" })), /*#__PURE__*/
 
 React.createElement("tr", null, /*#__PURE__*/
-React.createElement(Btn, { handleClick: props.handleClick, text: "log", value: "log10", class: "white-button" }), /*#__PURE__*/
-React.createElement(Btn, { handleClick: props.handleClick, text: "ln", value: "log", class: "white-button" }), /*#__PURE__*/
+React.createElement(Btn, { handleClick: props.handleClick, text: "log", value: "log10(", class: "white-button" }), /*#__PURE__*/
+React.createElement(Btn, { handleClick: props.handleClick, text: "ln", value: "log(", class: "white-button" }), /*#__PURE__*/
 React.createElement(Btn, { handleClick: props.handleClick, text: "e", class: "white-button" }), /*#__PURE__*/
-React.createElement(Btn, { handleClick: props.handleClick, text: "sqrt", class: "red-button" })), /*#__PURE__*/
+React.createElement(Btn, { handleClick: props.handleClick, text: "sqrt", value: "sqrt(", class: "red-button" })), /*#__PURE__*/
 
 React.createElement("tr", null, /*#__PURE__*/
-React.createElement(Btn, { handleClick: props.handleClick, text: "sin", class: "white-button" }), /*#__PURE__*/
-React.createElement(Btn, { handleClick: props.handleClick, text: "cos", class: "white-button" }), /*#__PURE__*/
-React.createElement(Btn, { handleClick: props.handleClick, text: "tan", class: "white-button" }), /*#__PURE__*/
+React.createElement(Btn, { handleClick: props.handleClick, text: "sin", value: "sin(", class: "white-button" }), /*#__PURE__*/
+React.createElement(Btn, { handleClick: props.handleClick, text: "cos", value: "cos(", class: "white-button" }), /*#__PURE__*/
+React.createElement(Btn, { handleClick: props.handleClick, text: "tan", value: "tan(", class: "white-button" }), /*#__PURE__*/
 React.createElement(Btn, { handleClick: props.handleClick, text: "pi", class: "red-button" })), /*#__PURE__*/
 
 React.createElement("tr", null, /*#__PURE__*/
-React.createElement(Btn, { handleClick: props.handleClick, text: "arcsin", value: "asin", class: "white-button" }), /*#__PURE__*/
-React.createElement(Btn, { handleClick: props.handleClick, text: "arccos", value: "acos", class: "white-button" }), /*#__PURE__*/
-React.createElement(Btn, { handleClick: props.handleClick, text: "arctan", value: "atan", class: "white-button" }), /*#__PURE__*/
+React.createElement(Btn, { handleClick: props.handleClick, text: "arcsin", value: "asin(", class: "white-button" }), /*#__PURE__*/
+React.createElement(Btn, { handleClick: props.handleClick, text: "arccos", value: "acos(", class: "white-button" }), /*#__PURE__*/
+React.createElement(Btn, { handleClick: props.handleClick, text: "arctan", value: "atan(", class: "white-button" }), /*#__PURE__*/
 React.createElement(Btn, { handleClick: props.handleClick, text: "deg", class: "red-button" })))));
 
 
@@ -202,7 +202,9 @@ class Simplify extends React.Component {
       case '#':this.toggleMode();break;
       case '=':this.handleEval();break;
       case 'del':this.handleInput(this.state.expr.slice(0, -1));break;
-      default:this.handleInput(this.state.expr + id);}
+      default:
+        document.getElementById("input").focus();
+        this.handleInput(this.state.expr + id);}
 
   }
   handleChange(event) {
