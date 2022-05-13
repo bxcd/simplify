@@ -1,6 +1,8 @@
 # simplify
 
-Trig calculator made with MathJS, Bootstrap, React and Redux
+A trig calculator with an output terminal and a nostalgic look.
+
+Made with MathJS, Bootstrap, React and Redux.
 
 Webpage: https://bxcd.github.io/simplify
 
